@@ -1,0 +1,19 @@
+.btn {
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 1.5rem;
+}
+
+.login {
+  color: blue;
+  background-color: whitesmoke;
+}
+
+.logout {
+  color: white;
+  background-color: blue;
+}
+
+.animal-img {
+  width: 150px;
+}
