@@ -78,11 +78,57 @@ import LoggedInOutBtn from "./LoggedInOutBtn";
 import "./App.css";
 import Animal from "./Animal";
 //import { useState } from "react";
+import ReactPlayer from "react-player/youtube";
+
+function MyVideo() {
+  return (
+    <ReactPlayer
+      url="https://www.youtube.com/watch?v=6stlCkUDG_s&list=PL4Gr5tOAPttLOY9IrWVjJlv4CtkYI5cI_&index=1"
+      muted={true}
+      volume={0.5}
+      playing={false}
+      controls={false}
+    />
+  );
+}
 
 function App() {
   //const {login, setLogin} = useState(true);
+  const bird1 = new Audio(
+    "https://upload.wikimedia.org/wikipedia/commons/9/9b/Hydroprogne_caspia_-_Caspian_Tern_XC432679.mp3"
+  );
+
+  const bird2 = new Audio(
+    "https://upload.wikimedia.org/wikipedia/commons/b/b5/Hydroprogne_caspia_-_Caspian_Tern_XC432881.mp3"
+  );
+
+  function toggle1() {
+    if (bird1.paused) {
+      bird1.play();
+      bird2.pause();
+    } else {
+      bird1.pause();
+    }
+  }
+
+  function toggle2() {
+    if (bird2.paused) {
+      bird2.play();
+      bird1.pause();
+    } else {
+      bird2.pause();
+    }
+  }
+
   return (
     <div className="App">
+      <div>
+        <button onClick={toggle1}>Caspian Tern 1</button>
+        <button onClick={toggle2}>Caspian Tern 2</button>
+      </div>
+      <div id="video">
+        <MyVideo />
+      </div>
       <nav className="nav">
         <Link to="/" className="nav-item">
           HomePage
@@ -93,11 +139,12 @@ function App() {
 
         <Link to="/cat-image">Cat Images</Link>
         <LoggedInOutBtn isLoggedIn={false} />
-      </nav>10
+      </nav>
+      10
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about-me" element={<AboutMe />} />
-        <Route path="cat-image"element={<Animal/>}/>
+        <Route path="cat-image" element={<Animal />} />
       </Routes>
     </div>
   );
@@ -105,21 +152,16 @@ function App() {
 
 export default App;
 
-
 /**
  * Assets
- * -->Images, stylesheets, fonts,-> files that react app needs 
+ * -->Images, stylesheets, fonts,-> files that react app needs
  */
 
 //folder structures
-//src-> assets -> 
+//src-> assets ->
 //if app can compile without an assets keep it in public folder.
 //img -> best to store in assets folder
 //using assets
 //import cat from './assets/images/cat.jpg
 //-> create func return asset as component
 //
-
-
-
-

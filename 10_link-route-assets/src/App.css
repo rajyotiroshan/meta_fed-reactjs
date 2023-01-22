@@ -17,3 +17,9 @@
 .animal-img {
   width: 150px;
 }
+
+#video {
+  display: flex;
+  justify-content: center;
+  padding: 5px 0;
+}

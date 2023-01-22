@@ -1,24 +1,47 @@
 * {
-    font-family: sans-serif;
-  }
-  input,
-  button {
-    font-size: 20px;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  input {
-    display: block;
-    margin-bottom: 20px;
-  }
-  button {
-    border: 1px solid gray;
-    background: whitesmoke;
-    margin-right: 5px;
-  }
-  button:nth-last-child(2),
-  button:nth-last-child(1) {
-    background: tomato;
-    color: white;
-  }
-  
+  font-family: sans-serif;
+}
+input,
+button {
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+input {
+  display: block;
+  margin-bottom: 20px;
+}
+button {
+  border: 1px solid gray;
+  background: whitesmoke;
+}
+button:nth-last-child(2),
+button:nth-last-child(1) {
+  background: tomato;
+  color: white;
+}
+
+form {
+  border: 0px solid black;
+  background-color: cadetblue;
+  padding: 7px 2px;
+  width: 200px;
+  display: grid;
+  row-gap: 2px;
+  column-gap: 2px;
+  grid-template-columns: 100px 100px;
+  justify-content: center;
+}
+
+p#result {
+  grid-column: 1/3;
+  text-align: right;
+  color: white;
+}
+
+input {
+  display: block;
+  margin-bottom: 20px;
+  grid-column: 1/3;
+  text-align: right;
+}
