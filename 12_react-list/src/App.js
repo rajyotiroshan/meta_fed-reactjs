@@ -15,6 +15,14 @@ const ToDo = (props) => (
   </tr>
 );
 
+//Note:: every list item should have a unique key property.
+//Why? As react update the actual DOM item based on the diff rendering algorithms it tries to update only teh list with diff list item
+//with newly added one or deleted one.
+//to make compare react needs a unique key
+//index can work but in the case of changing the order,new index will be be assinged and react won't be able to identify the
+//list item
+
+
 function App() {
   const [todos, setTodos] = useState([
     {
